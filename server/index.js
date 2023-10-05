@@ -6,7 +6,13 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy.mern-1whq.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true 
+    }
+));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
