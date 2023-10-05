@@ -6,11 +6,13 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({
-    origin: "",
-    methods: ["POST", "GET"],
-    credentials: true 
-}));
+app.use(
+  cors({
+    origin: 'https://frontend-taupe-six-23.vercel.app', // Replace with your frontend's URL
+    methods: ['GET', 'POST'], // Add the HTTP methods you want to allow
+    credentials: true, // Allow cookies and authentication headers to be sent with the request
+  })
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
