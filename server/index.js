@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors({
-    origin: "https://deploy.mern-1whq.vercel.app",
+    origin: "https://frontend-taupe-six-23.vercel.app/",
     methods: ["POST", "GET"],
     credentials: true 
 }));
