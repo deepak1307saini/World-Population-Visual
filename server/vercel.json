@@ -1,19 +1,13 @@
 {
   "version": 2,
+  "name": "music-ablum",
   "builds": [
-    { "src": "*.js", "use": "@vercel/node" }
+    { "src": "index.js", "use": "@vercel/node" }
   ],
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs16.x",
-      "memory": 512,  
-      "maxDuration": 30  
-    }
-  },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/index.js"
     }
   ]
 }
