@@ -37,6 +37,10 @@ const dataSchema = new mongoose.Schema({
 
 const DataModel = mongoose.model('worldpopulation', dataSchema);
 
+app.get('/',(req,res)=>{
+    res.json("Hello")
+})
+
 // Filter data route
 app.post('/filter-data', async (req, res) => {
     const { countries, fromYear, toYear } = req.body;
