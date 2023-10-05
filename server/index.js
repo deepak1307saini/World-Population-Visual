@@ -44,7 +44,7 @@ app.get('/',(req,res)=>{
 });
 
 // Filter data route
-app.post('/filter-data',  (req, res) => {
+app.post('/filter-data', async (req, res) => {
     const { countries, fromYear, toYear } = req.body;
     console.log("Hi Deepak1");
     // Define filters based on request parameters
@@ -71,7 +71,7 @@ app.post('/filter-data',  (req, res) => {
   
     try {
       console.log("Hi Deepak12");
-      const filteredData =  DataModel.find(filters);
+      const filteredData = await DataModel.find(filters);
       console.log("Hi Deepak13");
       res.json(filteredData);
     } catch (error) {
