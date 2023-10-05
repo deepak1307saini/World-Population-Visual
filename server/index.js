@@ -44,7 +44,7 @@ app.get('/',(req,res)=>{
 });
 
 // Filter data route
-app.get('/filter-data', async (req, res) => {
+app.post('/filter-data', async (req, res) => {
     const { countries, fromYear, toYear } = req.body;
     console.log("Hi Deepak1");
     // Define filters based on request parameters
