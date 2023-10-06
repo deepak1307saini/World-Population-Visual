@@ -8,7 +8,7 @@ const port = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: '*',
+    origin: 'https://frontend-taupe-six-23.vercel.app',
     methods: ['GET', 'POST'],
     credentials: true,
   })
@@ -18,10 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://2019kuec2053:fV2Aoopctegt3Pvs@cluster0.necznpn.mongodb.net/worldbank?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb+srv://2019kuec2053:fV2Aoopctegt3Pvs@cluster0.necznpn.mongodb.net/worldbank?retryWrites=true&w=majority');
 
 const db = mongoose.connection;
 
@@ -80,6 +77,6 @@ app.post('/filter-data', async (req, res) => {
   });
   
 
-app.listen(() => {
+app.listen(3001,() => {
   console.log(`Server is running on port ${port}`);
 });
