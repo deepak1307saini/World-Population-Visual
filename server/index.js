@@ -8,7 +8,7 @@ const port = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: 'https://frontend-taupe-six-23.vercel.app',
+    origin: ['https://frontend-taupe-six-23.vercel.app','https://world-population-visualization.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true,
   })
